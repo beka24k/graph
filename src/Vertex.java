@@ -59,6 +59,17 @@ public class Vertex<V> {
     }
 
 
+
+    /**
+     * Checks if the vertex contains the specified adjacent vertex.
+     *
+     * @param vertex the adjacent vertex to check
+     * @return true if the vertex contains the adjacent vertex, false otherwise
+     */
+    public boolean containsAdjacentVertex(Vertex<V> vertex) {
+        return adjVertex.containsKey(vertex);
+    }
+
     /**
      * Validates if the specified vertex is adjacent to this vertex.
      *
