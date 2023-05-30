@@ -50,8 +50,32 @@ public class WeightedGraph<V> {
             return source;
         }
 
+        /**
+         * Returns the destination vertex of the edge.
+         *
+         * @return the destination vertex
+         */
+        public Vertex<V> getDestination() {
+            return destination;
+        }
 
+        /**
+         * Returns the weight of the edge.
+         *
+         * @return the weight of the edge
+         */
+        public double getWeight() {
+            return weight;
+        }
     }
 
+    /**
+     * Adds a vertex to the graph.
+     *
+     * @param vertex the vertex to add
+     */
+    public void addVertex(Vertex<V> vertex) {
+        list.put(vertex, new ArrayList<>());
+    }
 
 }
