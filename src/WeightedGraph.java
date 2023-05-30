@@ -114,5 +114,17 @@ public class WeightedGraph<V> {
         return new ArrayList<>(list.keySet());
     }
 
+    /**
+     * Returns a list of all edges in the graph.
+     *
+     * @return a list of edges
+     */
+    public List<Edge<V>> getEdges() {
+        List<Edge<V>> allEdges = new ArrayList<>();
+        for (List<Edge<V>> edge : list.values()) {
+            allEdges.addAll(edge);
+        }
+        return allEdges;
+    }
 
 }
