@@ -19,8 +19,30 @@ public class DijkstraSearch<V> implements Search<V> {
     }
 
 
+
+
+
+
+
     @Override
     public List<V> findPath(Vertex<V> source, Vertex<V> destination) {
         return null;
+    }
+
+    private static class DijkstraNode<V> implements Comparable<DijkstraNode<V>> {
+        private Vertex<V> vertex;
+        private double distance;
+
+        public DijkstraNode(Vertex<V> vertex, double distance) {
+            this.vertex = vertex;
+            this.distance = distance;
+        }
+
+
+
+        @Override
+        public int compareTo(DijkstraNode<V> other) {
+            return Double.compare(distance, other.distance);
+        }
     }
 }
