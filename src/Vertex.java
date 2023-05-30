@@ -29,4 +29,15 @@ public class Vertex<V> {
         return data;
     }
 
+    /**
+     * Adds an adjacent vertex with the specified weight.
+     *
+     * @param destination the adjacent vertex
+     * @param weight      the weight of the edge to the adjacent vertex
+     */
+    public void addAdjacentVertex(Vertex<V> destination, double weight) {
+        adjVertex.put(destination, weight);
+    }
+
+
 }
