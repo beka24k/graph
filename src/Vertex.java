@@ -58,7 +58,16 @@ public class Vertex<V> {
         adjVertex.remove(vertex);
     }
 
-
+    /**
+     * Returns the weight of the edge to the specified adjacent vertex.
+     *
+     * @param vertex the adjacent vertex
+     * @return the weight of the edge
+     */
+    public double getWeight(Vertex<V> vertex) {
+        validateVertex(vertex);
+        return adjVertex.get(vertex);
+    }
 
     /**
      * Checks if the vertex contains the specified adjacent vertex.
