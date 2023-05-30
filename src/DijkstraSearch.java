@@ -6,7 +6,7 @@ import java.util.*;
  *
  * @param <V> the type of vertex in the graph
  */
-public class DijkstraSearch<V>  {
+public class DijkstraSearch<V> implements Search<V> {
     private WeightedGraph<V> graph;
 
     /**
@@ -19,4 +19,8 @@ public class DijkstraSearch<V>  {
     }
 
 
+    @Override
+    public List<V> findPath(Vertex<V> source, Vertex<V> destination) {
+        return null;
+    }
 }
