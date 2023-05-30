@@ -48,4 +48,17 @@ public class Vertex<V> {
         return adjVertex;
     }
 
+    /**
+     * Validates if the specified vertex is adjacent to this vertex.
+     *
+     * @param vertex the vertex to validate
+     * @throws IllegalArgumentException if the vertex is not adjacent to this vertex
+     */
+    private void validateVertex(Vertex<V> vertex) {
+        if (!adjVertex.containsKey(vertex)) {
+            throw new IllegalArgumentException("Vertex " + vertex + " is out of the range");
+        }
+    }
+
+
 }
