@@ -46,6 +46,34 @@ public class BFS<V> implements Search<V> {
         return visited;
     }
 
+    /**
+     * Prints the vertices visited during BFS traversal starting from the specified start vertex.
+     *
+     * @param startVertex the start vertex for the BFS
+     */
+    public void printBFS(Vertex<V> startVertex) {
+        Set<Vertex<V>> visited = new HashSet<>();
+        Queue<Vertex<V>> queue = new LinkedList<>();
+
+        visited.add(startVertex);
+        queue.offer(startVertex);
+
+        while (!queue.isEmpty()) {
+            Vertex<V> currentVertex = queue.poll();
+            System.out.print(currentVertex.getData() + " ");
+
+            List<WeightedGraph<V>.Edge<V>> edges = graph.getEdge(currentVertex);
+            for (WeightedGraph<V>.Edge<V> edge : edges) {
+                Vertex<V> adjacentVertex = edge.getDestination();
+                if (!visited.contains(adjacentVertex)) {
+                    visited.add(adjacentVertex);
+                    queue.offer(adjacentVertex);
+                }
+            }
+        }
+
+        System.out.println();
+    }
 
     /**
      * Finds a path from the source vertex to the destination vertex using BFS.
