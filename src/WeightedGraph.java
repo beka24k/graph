@@ -150,5 +150,14 @@ public class WeightedGraph<V> {
         }
     }
 
-
+    /**
+     * Returns the list of edges adjacent to the specified vertex.
+     *
+     * @param vertex the vertex to get the edges for
+     * @return a list of edges adjacent to the vertex
+     */
+    public List<Edge<V>> getEdge(Vertex<V> vertex) {
+        validate(vertex);
+        return list.get(vertex);
+    }
 }
