@@ -5,7 +5,7 @@ import java.util.*;
  *
  * @param <V> the type of vertex in the graph
  */
-public class BFS<V> {
+public class BFS<V> implements Search<V> {
     private WeightedGraph<V> graph;
 
     /**
@@ -17,4 +17,8 @@ public class BFS<V> {
         this.graph = graph;
     }
 
+    @Override
+    public List<V> findPath(Vertex<V> source, Vertex<V> destination) {
+        return null;
+    }
 }
