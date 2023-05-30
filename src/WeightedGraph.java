@@ -78,5 +78,32 @@ public class WeightedGraph<V> {
         list.put(vertex, new ArrayList<>());
     }
 
+    /**
+     * Adds an edge with the specified source, destination, and weight to the graph.
+     *
+     * @param source      the source vertex of the edge
+     * @param destination the destination vertex of the edge
+     * @param weight      the weight associated with the edge
+     */
+    public void addEdge(Vertex<V> source, Vertex<V> destination, double weight) {
+        validate(source);
+        validate(destination);
+        List<Edge<V>> edges = list.get(source);
+        edges.add(new Edge<V>(source, destination, weight));
+        list.put(source, edges);
+    }
+
+    /**
+     * Validates if the specified vertex is present in the graph.
+     *
+     * @param vertex the vertex to validate
+     * @throws IllegalArgumentException if the vertex is not present in the graph
+     */
+    public void validate(Vertex<V> vertex) {
+        if (!list.containsKey(vertex)) {
+            throw new IllegalArgumentException("Vertex " + vertex + " is out of the range");
+        }
+    }
+
 
 }
