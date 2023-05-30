@@ -105,5 +105,14 @@ public class WeightedGraph<V> {
         }
     }
 
+    /**
+     * Returns a list of all vertices in the graph.
+     *
+     * @return a list of vertices
+     */
+    public List<Vertex<V>> getVertices() {
+        return new ArrayList<>(list.keySet());
+    }
+
 
 }
