@@ -39,5 +39,13 @@ public class Vertex<V> {
         adjVertex.put(destination, weight);
     }
 
+    /**
+     * Returns a map of adjacent vertices and their corresponding weights.
+     *
+     * @return a map of adjacent vertices and weights
+     */
+    public Map<Vertex<V>, Double> getAdjacentVertices() {
+        return adjVertex;
+    }
 
 }
