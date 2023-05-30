@@ -78,5 +78,12 @@ public class Vertex<V> {
         adjVertex.clear();
     }
 
-
+    /**
+     * Returns the degree of the vertex, which is the number of adjacent vertices.
+     *
+     * @return the degree of the vertex
+     */
+    public int getDegree() {
+        return adjVertex.size();
+    }
 }
