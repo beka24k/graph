@@ -20,4 +20,13 @@ public class Vertex<V> {
         this.adjVertex = new HashMap<>();
     }
 
+    /**
+     * Returns the data associated with the vertex.
+     *
+     * @return the data of the vertex
+     */
+    public V getData() {
+        return data;
+    }
+
 }
