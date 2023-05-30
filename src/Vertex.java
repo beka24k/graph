@@ -49,6 +49,17 @@ public class Vertex<V> {
     }
 
     /**
+     * Removes the specified adjacent vertex.
+     *
+     * @param vertex the adjacent vertex to remove
+     */
+    public void removeAdjacentVertex(Vertex<V> vertex) {
+        validateVertex(vertex);
+        adjVertex.remove(vertex);
+    }
+
+
+    /**
      * Validates if the specified vertex is adjacent to this vertex.
      *
      * @param vertex the vertex to validate
@@ -58,6 +69,13 @@ public class Vertex<V> {
         if (!adjVertex.containsKey(vertex)) {
             throw new IllegalArgumentException("Vertex " + vertex + " is out of the range");
         }
+    }
+
+    /**
+     * Clears all the adjacent vertices of the vertex.
+     */
+    public void clearAdjacentVertices() {
+        adjVertex.clear();
     }
 
 
